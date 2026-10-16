@@ -1,66 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Monev - Sistem Monitoring & Evaluasi Magang
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem platform terintegrasi untuk pengelolaan, monitoring aktivitas harian, verifikasi kehadiran, kurikulum bimbingan, serta evaluasi program magang berbasis **Laravel**, **Inertia.js**, dan **React**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ⚠️ Pemberitahuan Lisensi & Hak Cipta (PENTING)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> [!CAUTION]
+> **HAK CIPTA DILINDUNGI UNDANG-UNDANG.**
+> Seluruh kode sumber (*source code*), rancangan arsitektur, dan aset digital pada repositori ini adalah karya cipta milik **LEFI ANDRI LESTARI**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Ketentuan Lisensi Bebas Terbatas (*Limited Permitted Use*)
+1. Repositori dan *source code* ini berstatus **Bebas Terbatas**:
+   - Penggunaan, pengujian, implementasi, modifikasi, penggandaan, maupun pendistribusian kode sumber hanya diperbolehkan **apabila telah mendapatkan izin resmi secara tertulis** dari pemilik hak cipta:
+     - **Pembuat / Pemilik Hak Cipta**: **LEFI ANDRI LESTARI**
+     - **Email Korespondensi Izin**: [lefi.andri@kokek.com](mailto:lefi.andri@kokek.com)
+2. Segala bentuk pemanfaatan tanpa adanya izin tertulis yang sah dari pembuat merupakan **perbuatan ilegal (tindakan melawan hukum)**.
+3. Dilarang keras menghapus, mengubah, atau menyamarkan atribusi kepemilikan, *copyright notice*, atau identitas pembuat dari kode program ini.
 
-## Learning Laravel
+### Sanksi Hukum Pelanggaran Hak Cipta di Indonesia
+Pelanggaran atas hak cipta ini akan ditindaklanjuti melalui jalur hukum sesuai peraturan perundang-undangan yang berlaku di Negara Kesatuan Republik Indonesia:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta**:
+  - **Pasal 113 ayat (3)**: Setiap orang yang tanpa hak dan/atau tanpa izin Pencipta atau pemegang Hak Cipta melakukan pelanggaran hak ekonomi Pencipta untuk Penggunaan Secara Komersial dipidana dengan **pidana penjara paling lama 4 (empat) tahun dan/atau pidana denda paling banyak Rp 1.000.000.000,00 (satu miliar rupiah)**.
+  - **Pasal 113 ayat (4)**: Setiap orang yang memenuhi unsur sebagaimana dimaksud pada ayat (3) yang dilakukan dalam bentuk pembajakan, dipidana dengan **pidana penjara paling lama 10 (sepuluh) tahun dan/atau pidana denda paling banyak Rp 4.000.000.000,00 (empat miliar rupiah)**.
+- **Undang-Undang Informasi dan Transaksi Elektronik (UU ITE)** (UU No. 11 Tahun 2008 jo. UU No. 19 Tahun 2016 jo. UU No. 1 Tahun 2024):
+  - Terkait tindak pidana pengaksesan sistem secara tanpa hak (*illegal access*), perubahan, perusakan, atau transmisi informasi/dokumen elektronik milik orang lain tanpa izin yang sah.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 👥 Pengguna & Akun Login Default (User Roles)
 
-## Laravel Sponsors
+Setelah menjalankan database seeder (`php artisan migrate --seed`), sistem telah menyediakan akun pengujian untuk masing-masing *role* berikut:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Role | Nama Akun | Email Login | Password Default | Akses & Wewenang Utama |
+| :--- | :--- | :--- | :--- | :--- |
+| **Admin** | Admin Monev | `admin@monev.test` | `Password123!` | Kelola seluruh pengguna (*CRUD*), manajemen *batch* / angkatan, penugasan mentor, tinjau *audit trail* (*activity log*), publikasi pengumuman sistem. |
+| **Mentor** | Lefi Andri Lestari | `mentor@monev.test` | `Password123!` | Monitoring peserta bimbingan, verifikasi dan berikan catatan presensi harian, penilaian evaluasi berkala, serta kelola fokus kurikulum/modul. |
+| **Peserta** | M. Riyan Akbari | `peserta@monev.test` | `Password123!` | Pengisian presensi & aktivitas harian, melihat riwayat kehadiran, progres modul kurikulum, hasil evaluasi dari mentor, dan pengumuman. |
 
-### Premium Partners
+> [!NOTE]
+> Nilai default password pada seeder dapat dikonfigurasi melalui variabel lingkungan `.env` dengan menambahkan `MONEV_SEED_PASSWORD=PasswordAnda!`. Untuk lingkungan *production*, sangat dianjurkan untuk segera mengganti password default ini.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Rincian Fitur Berdasarkan Role
 
-## Contributing
+#### 1. Administrator (`admin`)
+- **Manajemen Batch / Angkatan**: Menambah, mengubah status (*active*, *upcoming*, *completed*), memilih batch aktif, dan menugaskan peserta ke dalam batch tertentu.
+- **Manajemen Pengguna**: Membuat, mengedit, menghapus akun Admin, Mentor, maupun Peserta, serta menghubungkan peserta ke mentor penanggung jawab.
+- **Activity Log & Audit Trail**: Memantau jejak audit (*causer*, *event*, deskripsi perubahan data) untuk transparansi keamanan sistem.
+- **Pengumuman**: Membuat dan menyiarkan pengumuman ke seluruh role atau role spesifik.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 2. Mentor (`mentor`)
+- **Dashboard Peserta**: Memilih dan melihat detail profil peserta magang di bawah bimbingannya.
+- **Verifikasi Kehadiran**: Memeriksa laporan aktivitas presensi harian, menyetujui (*approve*), memberikan masukan/evaluasi (*mentor note*), atau menolak presensi.
+- **Fokus Kurikulum & Modul**: Menentukan topik pembelajaran dan menandai status penyelesaian modul peserta magang.
+- **Penilaian & Evaluasi**: Memberikan skor penilaian berkala (aspek teknis, kedisiplinan, inisiatif, dll.) beserta catatan evaluasi komprehensif.
 
-## Code of Conduct
+#### 3. Peserta Magang (`peserta`)
+- **Presensi Harian**: Mengisi form kehadiran harian meliputi tipe (Hadir, Izin, Sakit), jam presensi, deskripsi aktivitas pekerjaan, materi pembelajaran yang didapat, serta kendala yang dihadapi.
+- **Riwayat & Verifikasi**: Memantau status persetujuan kehadiran oleh mentor pembimbing secara langsung.
+- **Pantauan Belajar & Hasil Evaluasi**: Meninjau silabus fokus bimbingan dan skor evaluasi yang diterbitkan oleh mentor.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Panduan Instalasi & Cara Menggunakan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Ikuti langkah-langkah di bawah ini untuk memasang dan menjalankan aplikasi di komputer lokal:
 
-## License
+### 1. Prasyarat Sistem
+Pastikan lingkungan pengembangan Anda telah terpasang:
+- **PHP** versi 8.2 atau lebih tinggi (disarankan PHP 8.3+)
+- **Composer** (v2.x)
+- **Node.js** (v18.x atau v20.x+) & **npm**
+- **Database Server** (MySQL 8+, MariaDB 10.4+, atau SQLite)
+- **Laravel Herd** (opsional untuk lingkungan Windows/macOS yang mempermudah manajemen PHP dan Nginx)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### 2. Langkah-Langkah Instalasi
+
+#### Langkah 1: Kloning Repositori
+```bash
+git clone <URL_REPOSITORY_ANDA> monev
+cd monev
+```
+
+#### Langkah 2: Pasang Dependensi Backend (PHP)
+```bash
+composer install
+```
+
+#### Langkah 3: Pasang Dependensi Frontend (Node.js)
+```bash
+npm install
+```
+
+#### Langkah 4: Konfigurasi File Environment
+Salin file `.env.example` menjadi `.env`:
+```bash
+# Windows PowerShell
+copy .env.example .env
+
+# Atau bash/terminal
+cp .env.example .env
+```
+
+Buka file `.env` dan sesuaikan pengaturan database Anda:
+```env
+DB_CONNECTION=mariadb
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database_anda
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+#### Langkah 5: Generate Application Key
+```bash
+php artisan key:generate
+```
+
+#### Langkah 6: Migrasi & Seeding Database
+Jalankan migrasi tabel beserta akun default, role, permissions, dan data demonstrasi awal:
+```bash
+php artisan migrate --seed
+```
+
+#### Langkah 7: Buat Symlink Storage
+Untuk memastikan berkas media seperti foto profil (*avatar*) dapat diakses secara publik:
+```bash
+php artisan storage:link
+```
+
+---
+
+### 3. Menjalankan Aplikasi
+
+#### Cara 1: Menggunakan Perintah Otomatis (*Concurrently*)
+Proyek ini telah dikonfigurasi dengan skrip `composer run dev` yang secara simultan menjalankan Web Server, Antrean (*Queue*), Log Viewer, dan Vite:
+```bash
+composer run dev
+```
+
+#### Cara 2: Menjalankan Secara Terpisah
+Buka 2 terminal terpisah:
+
+- **Terminal 1 (Backend Server)**:
+  ```bash
+  php artisan serve
+  ```
+- **Terminal 2 (Frontend Assets / Vite)**:
+  ```bash
+  npm run dev
+  ```
+
+#### Cara 3: Menggunakan Laravel Herd
+Jika Anda menggunakan **Laravel Herd**, cukup jalankan:
+```bash
+npm run dev
+```
+Dan buka domain lokal Anda (misalnya `http://monev.test`).
+
+---
+
+### 4. Mengakses Aplikasi
+
+Buka browser dan arahkan ke alamat:
+```
+http://127.0.0.1:8000
+```
+atau alamat domain lokal Herd Anda. Silakan login menggunakan salah satu akun pada tabel **User Roles** di atas.
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Backend Framework**: [Laravel 13](https://laravel.com) (PHP 8.5/8.2+)
+- **Frontend Layer**: [React 19](https://react.dev) dengan [Inertia.js v2](https://inertiajs.com)
+- **Styling & UI**: [Tailwind CSS v4](https://tailwindcss.com), [Radix UI](https://www.radix-ui.com), [Lucide React](https://lucide.dev)
+- **Role & Permission Management**: [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission)
+- **Media & File Handling**: [Spatie Laravel Medialibrary](https://spatie.be/docs/laravel-medialibrary)
+- **Audit Trails**: [Spatie Laravel Activitylog](https://spatie.be/docs/laravel-activitylog)
+
+---
+
+## 📬 Kontak & Perizinan
+
+Untuk pengajuan permohonan lisensi, kerja sama, atau pertanyaan lebih lanjut terkait penggunaan sistem ini, silakan menghubungi:
+
+- **Nama**: **LEFI ANDRI LESTARI**
+- **Email**: [lefi.andri@kokek.com](mailto:lefi.andri@kokek.com)
+- **Perusahaan / Organisasi**: PT KOKEK
